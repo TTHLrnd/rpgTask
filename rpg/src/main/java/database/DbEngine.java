@@ -14,7 +14,11 @@ public class DbEngine {
     }
 
     private Connection connect() {
-        String url = "jdbc:mysql://localhost:3306/rpgdb";
+        String url = "jdbc:mysql://localhost:3306/rpgdb"  +
+                "?" +
+                "useUnicode = yes" +
+                "&" +
+                "characterEncoding = UTF-8";
 
 
         Properties properties = new Properties();
@@ -22,7 +26,7 @@ public class DbEngine {
         properties.put("password", System.getenv("DB_PASS"));
 
         try {
-            return DriverManager.getConnection(url);
+            return DriverManager.getConnection(url, properties);
         } catch (SQLException e) {
             e.printStackTrace();
             System.out.println("error");
