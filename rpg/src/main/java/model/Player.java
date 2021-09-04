@@ -44,4 +44,14 @@ public class Player {
     public void setReg_date(Timestamp reg_date) {
         this.reg_date = reg_date;
     }
+
+    @Override
+    public String toString() {
+        return "Player{" +
+                "username='" + username + '\'' +
+                ", email_address='" + email_address + '\'' +
+                ", reg_date=" + reg_date +
+                ", characters=" + characters +
+                '}';
+    }
 }

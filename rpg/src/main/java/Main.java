@@ -1,4 +1,7 @@
 import database.DbEngine;
+import model.Player;
+
+import java.util.List;
 
 public class Main {
 
@@ -41,7 +44,14 @@ public class Main {
      */
     public static void main(String[] args) {
         DbEngine dbEngine = new DbEngine();
+        List<Player> playerList = dbEngine.listPlayers();
 
-        System.out.println(dbEngine.isConnected());
+        if (dbEngine.isConnected()) {
+            for (Player player : playerList) {
+                System.out.println(player.toString());
+            }
+        } else {
+
+        }
     }
 }
