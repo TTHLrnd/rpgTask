@@ -1,3 +1,5 @@
+import database.DbEngine;
+
 public class Main {
 
     /**
@@ -38,6 +40,8 @@ public class Main {
      * @param args
      */
     public static void main(String[] args) {
+        DbEngine dbEngine = new DbEngine();
 
+        System.out.println(dbEngine.isConnected());
     }
 }
